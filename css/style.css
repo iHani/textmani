@@ -1,0 +1,56 @@
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  padding-bottom: 2rem;
+}
+
+button, input{
+  margin-top: 4px;
+}
+
+.site-description{
+  color: white;
+}
+@media (min-width: 544px) {
+  .navbar {
+    border-radius: 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 992px){
+  .container {
+    width: 970px;
+  }
+}
+
+.padd-10-bottom{
+  padding-bottom: 10px;
+}
+
+.dotted {
+  border-style: dotted;
+  border-color: #d9d9d9;
+  border-radius: 6px;
+  padding: 5px;
+  background-color: white;
+}
+
+.my-row {
+  padding: 10px 0;
+  border-top: 1px solid #d9d9d9;
+}
+.my-row:hover{
+  background-color: #e6e6e6;
+}
+
+.jumbotron {
+  padding: 1rem 1rem;
+}
+
+.btn-outline-success{
+  background-color: white;
+}

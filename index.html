@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<meta name="description" content="Fast online text manipulator that allows you to use Lowercase/Uppercase converter, words counter, replace text with another text, and more with a single click!">
+	<meta name="keywords" content="uppercase,lowercase,clean text,text processor,text manipulator,text generator,scramble text,textmani">
+	<meta name="author" content="Textmani">
+	<title>Textmani - Free online text manipulator</title>
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/css/bootstrap.min.css" integrity="sha384-MIwDKRSSImVFAZCVLtU0LMDdON6KVCrZHyVQQj6e8wIEJkW4tvwqXrbMIya1vriY" crossorigin="anonymous">
+	<!-- Custom styles for this template -->
+	<link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+	<nav class="navbar navbar-static-top navbar-dark bg-inverse">
+		<div class="container">
+			<a class="navbar-brand" href="/"><h2>Textmani.com</h2></a>
+		</div>
+		<div class="container">
+			<span class="site-description">Count words, fix capitalization, replace words, scramble text, generate dummy text and more.. click click done!</span>
+		</div>
+	</nav>
+
+	<!-- Main jumbotron for a primary marketing message or call to action -->
+	<div class="jumbotron">
+		<div class="container">
+			<!-- Nav tabs -->
+			<ul class="nav nav-tabs" role="tablist">
+				<li class="nav-item">
+					<a id="manipulator" class="nav-link" data-toggle="tab" href="#manipulator-content" role="tab" onclick="localStore('textmani_active_tab','manipulator')"><h5>Manipulator</h5></a>
+				</li>
+				<li class="nav-item">
+					<a id="generator" class="nav-link" data-toggle="tab" href="#generator-content" role="tab" onclick="localStore('textmani_active_tab','generator')"><h5>Generator</h5></a>
+				</li>
+			</ul>
+
+			<!-- Tab panes -->
+			<div class="tab-content">
+				<!-- Manipulator tab -->
+				<div id="manipulator-content" class="tab-pane" role="tabpanel">
+					<form>
+						<div class="form-group">
+							<br>
+							<textarea id="input" class="form-control" rows="6" placeholder="Type or paste your text here..." autofocus oninput="counters('input');updateStatus('TM','Ready!','black')"></textarea>
+						</div>
+						<div class="row padd-10-bottom">
+							<div class="col-xs-3 small">Characters: <strong id="tm-chars-count">0</strong> Words: <strong id="tm-words-count">0</strong></div>
+							<div class="col-xs-6 text-xs-center dotted" id="TMstatus">Ready!</div>
+							<div class="col-xs-3 text-xs-right">
+								<button type="button" class="btn btn-secondary" onclick="let el = e('input');el.value='';el.focus();zeroCounters('TM');updateStatus('TM','Cleared','#3399ff')">Clear</button>
+								<button type="button" class="btn btn-secondary" onclick="copyFrom('input');e('input').focus()">Copy</button>
+							</div>
+						</div>
+
+						<div class="row my-row">
+							<div class="container">
+								<div class="col-xs-3 text-xs-right">Convert Case</div>
+								<div class="col-xs-9 text-xs-left">
+									<button type="button" class="btn btn-primary" onclick="switchCase(0)">lower case</button>
+									<button type="button" class="btn btn-primary" onclick="switchCase(1)">UPPER CASE</button>
+									<button type="button" class="btn btn-primary" onclick="switchCase(2)">Capitalized Case</button>
+								</div>
+							</div>
+						</div>
+
+						<div class="row my-row">
+							<div class="container">
+								<div class="col-xs-3 text-xs-right">Count matches for</div>
+								<div class="col-xs-9 text-xs-left">
+									<div class="row">
+										<div class="col-md-4">
+											<div class="input-group">
+												<input id="match" type="text" class="form-control form-control">
+											</div>
+										</div>
+										<div class="col-md-2"><button type="button" class="btn btn-warning" onclick="countMatchings()">Count</button></div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="row my-row">
+							<div class="container">
+								<div class="col-xs-3 text-xs-right">Replace</div>
+								<div class="col-xs-9 text-xs-left">
+									<div class="row">
+										<div class="col-md-4">
+											<div class="input-group">
+												<input id="replace-this" type="text" class="form-control form-control">
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="container">
+								<div class="col-xs-3 text-xs-right">With</div>
+								<div class="col-xs-9 text-xs-left">
+									<div class="row">
+										<div class="col-md-4">
+											<div class="input-group">
+												<input id="with-this" type="text" class="form-control form-control">
+											</div>
+										</div>
+										<div class="col-md-2"><button type="button" class="btn btn-warning" onclick="replaceSomething()">Replace</button></div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="row my-row">
+							<div class="container">
+								<div class="col-xs-3 text-xs-right">Remove something</div>
+								<div class="col-xs-9 text-xs-left">
+									<div class="row">
+										<div class="col-md-4">
+											<div class="input-group">
+												<input id="to-remove" type="text" class="form-control form-control">
+											</div>
+										</div>
+										<div class="col-md-2"><button type="button" class="btn btn-warning" onclick="removeSomething(e('to-remove').value)">Remove</button></div>
+										<div class="col-md-2"><button type="button" class="btn btn-warning" onclick="removeSomething('ـ')">إزالة المــد</button></div>
+										<div class="col-md-2"><button type="button" class="btn btn-warning" onclick="removeSomething('َ','ً','ُ','ٌ','ِ','ٍ','ّ','‘’','ْ')">إزالة التشكيل</button></div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="row my-row">
+							<div class="container">
+								<div class="col-xs-3 text-xs-right">Scramble</div>
+								<div class="col-xs-9 text-xs-left">
+									<button type="button" class="btn btn-danger" onclick="scramble('letters')">Letters in words</button>
+									<button type="button" class="btn btn-danger" onclick="scramble('words')">Words in sentences</button>
+									<button type="button" class="btn btn-danger" onclick="scramble('sentences')">Sentences in paragraphs</button>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+
+				<!-- Generator tab -->
+				<div id="generator-content" class="tab-pane" role="tabpanel">
+					<form>
+						<div class="form-group">
+							<br>
+							<textarea id="lipsum" class="form-control" rows="6" placeholder="Lorem ipsum text will be generated here..." oninput="counters('lipsum');updateStatus('TM','Ready!','black')"></textarea>
+						</div>
+						<div class="row padd-10-bottom">
+							<div class="col-xs-3 small">Characters: <strong id="gn-chars-count">0</strong> Words: <strong id="gn-words-count">0</strong></div>
+							<div class="col-xs-6 text-xs-center dotted" id="GNstatus">Ready!</div>
+							<div class="col-xs-3 text-xs-right">
+								<button type="button" class="btn btn-secondary" onclick="let el = e('lipsum');el.value='';el.focus();zeroCounters('GN');updateStatus('GN','Cleared','#3399ff')">Clear</button>
+								<button type="button" class="btn btn-secondary" onclick="copyFrom('lipsum');e('lipsum').focus()">Copy</button>
+							</div>
+						</div>
+
+						<div class="row my-row">
+							<div class="container">
+								<div class="col-xs-3 text-xs-right">Generate what</div>
+								<div class="col-xs-9 text-xs-left">
+									<form id="generateWhat" name="genWhat" class="">
+										<div class="btn-group" data-toggle="buttons">
+											<label id="words" class="btn btn-outline-success" onclick="localStore('textmani_gen_what','words')">
+												<input type="radio" name="genwhat" value="words">Words
+											</label>
+											<label id="sentcs" class="btn btn-outline-success" onclick="localStore('textmani_gen_what','sentcs')">
+												<input type="radio" name="genwhat" value="sentcs">Sentences
+											</label>
+											<label id="prgfs" class="btn btn-outline-success" onclick="localStore('textmani_gen_what','prgfs')">
+												<input type="radio" name="genwhat" value="prgfs">Paragraphs
+											</label>
+										</div>
+									</form>
+								</div>
+							</div>
+							<div class="container">
+								<div class="col-xs-3 text-xs-right">How many times</div>
+								<div class="col-xs-9 text-xs-left">
+									<form id="howManyTimes" name="timesBy" class="">
+										<div class="btn-group" data-toggle="buttons">
+											<label id="t1" class="btn btn-outline-success" onclick="localStore('textmani_gen_times','t1')"><input type="radio" name="gentimes" value="1">1</label>
+											<label id="t3" class="btn btn-outline-success" onclick="localStore('textmani_gen_times','t3')"><input type="radio" name="gentimes" value="3">3</label>
+											<label id="t5" class="btn btn-outline-success" onclick="localStore('textmani_gen_times','t5')"><input type="radio" name="gentimes" value="5">5</label>
+											<label id="t10" class="btn btn-outline-success" onclick="localStore('textmani_gen_times','t10')"><input type="radio" name="gentimes" value="10">10</label>
+											<label id="t20" class="btn btn-outline-success" onclick="localStore('textmani_gen_times','t20')"><input type="radio" name="gentimes" value="20">20</label>
+											<label id="t50" class="btn btn-outline-success" onclick="localStore('textmani_gen_times','t50')"><input type="radio" name="gentimes" value="50">50</label>
+											<label id="t100" class="btn btn-outline-success" onclick="localStore('textmani_gen_times','t100')"><input type="radio" name="gentimes" value="100">100</label>
+											<label id="t250" class="btn btn-outline-success" onclick="localStore('textmani_gen_times','t250')"><input type="radio" name="gentimes" value="250">250</label>
+											<label id="t500" class="btn btn-outline-success" onclick="localStore('textmani_gen_times','t500')"><input type="radio" name="gentimes" value="500">500</label>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+
+						<div class="row my-row">
+							<div class="container">
+								<div class="text-xs-center">
+									<div class="btn-group" role="group">
+										<button type="button" class="btn btn-success btn-lg" onclick="generateLipsum()">Generate!</button>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4">
+				<h2>Manipulator</h2>
+				<ul>
+					<li>Convert Case: Easily <strong>change capitalization case</strong> to lowercase, uppercase, or capitalize case.</li>
+					<li>Count Matches for: Will return the <strong>number of characters and words</strong> that matches the provided text, in the status box.</li>
+					<li>Replace X with Y: Will <strong>search and replace the text</strong> with the given strings, and display the number of executions in the status box.</li>
+					<li>Remove Something: <strong>Removes a string from the entire text</strong>, as many times as it occurs.</li>
+					<li><strong>Scrambling text</strong>:
+						<ul>
+							<li>Letters: Will shuffle the order of every letter in each word</li>
+							<li>Words: Will shuffle the order of every word in the text</li>
+							<li>Sentences: Will separate the text by any comma or dot, then shuffle the order</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div class="col-md-4">
+				<h2>Generator</h2>
+				<p>Fast <strong>Lorem Ipsum text generator</strong>. Lorem Ipsum text is just a dummy text, also called placeholder (or filler) text. It's a convenient tool for mock-ups. It helps to outline the visual elements of a document or presentation, eg typography, font, or layout.</p>
+				<p>The Lorem Ipsum text generated in this website is a greatley distorted version of the Latin text by the classical author and philosopher Cicero.</p>
+			</div>
+			<div class="col-md-4">
+				<h2>Ads</h2>
+				<div>
+					<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+					<ins class="adsbygoogle"
+					style="display:block"
+					data-ad-client="ca-pub-5526559021654763"
+					data-ad-slot="1758947890"
+					data-ad-format="auto"></ins>
+					<script>
+					(adsbygoogle = window.adsbygoogle || []).push({});
+					</script>
+				</div>
+			</div>
+		</div>
+
+		<hr>
+
+		<footer id="footer" class="text-xs-center">
+			<p>
+				<a href="https://github.com/iHani/textmani"><img src="img/github.png" alt="github link"> Source</a>
+				 &copy; Textmani 2016</p>
+		</footer>
+
+	</div> <!-- /container -->
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js" integrity="sha384-THPy051/pYDQGanwU6poAc/hOdQxjnOEXzbT+OuUAFqNqFjL+4IGLBgCJC3ZOShY" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js" integrity="sha384-Plbmg8JY28KFelvJVai01l8WyZzrYWG825m+cZ0eDDS1f7d/js6ikvy1+X+guPIB" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/js/bootstrap.min.js" integrity="sha384-ux8v3A6CPtOTqOzMKiuo3d/DomGaaClxFYdCu2HPMBEkf6x2xiDyJ7gkXU0MWwaD" crossorigin="anonymous"></script>
+	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+	<script src="js/ie10-viewport-bug-workaround.js"></script>
+	<script src="js/script.js"></script>
+	<!-- Start of StatCounter Code for Default Guide -->
+	<script type="text/javascript">
+	var sc_project=11078624;
+	var sc_invisible=1;
+	var sc_security="63dab027";
+	var scJsHost = (("https:" == document.location.protocol) ?
+	"https://secure." : "http://www.");
+	document.write("<sc"+"ript type='text/javascript' src='" +
+	scJsHost+
+	"statcounter.com/counter/counter.js'></"+"script>");
+	</script>
+	<noscript><div class="statcounter"><a title="web statistics"
+		href="http://statcounter.com/free-web-stats/"
+		target="_blank"><img class="statcounter"
+		src="//c.statcounter.com/11078624/0/63dab027/1/" alt="web
+		statistics"></a></div></noscript>
+		<!-- End of StatCounter Code for Default Guide -->
+	</body>
+	</html>
