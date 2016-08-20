@@ -75,7 +75,7 @@ function updateStatus(el, msg, color) {
   }
 }
 
-
+// coply to clipboard
 function copyFrom(el) {
   let t = ''
   if (el == 'input') { t = 'TM' }

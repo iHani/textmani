@@ -25,7 +25,6 @@
 		</div>
 	</nav>
 
-	<!-- Main jumbotron for a primary marketing message or call to action -->
 	<div class="jumbotron">
 		<div class="container">
 			<!-- Nav tabs -->
@@ -148,7 +147,7 @@
 					<form>
 						<div class="form-group">
 							<br>
-							<textarea id="lipsum" class="form-control" rows="6" placeholder="Lorem ipsum text will be generated here..." oninput="counters('lipsum');updateStatus('TM','Ready!','black')"></textarea>
+							<textarea id="lipsum" class="form-control" rows="6" placeholder="Lorem ipsum text will be generated here..." oninput="counters('lipsum');updateStatus('GN','Ready!','black')"></textarea>
 						</div>
 						<div class="row padd-10-bottom">
 							<div class="col-xs-3 small">Characters: <strong id="gn-chars-count">0</strong> Words: <strong id="gn-words-count">0</strong></div>
@@ -165,13 +164,13 @@
 								<div class="col-xs-9 text-xs-left">
 									<form id="generateWhat" name="genWhat" class="">
 										<div class="btn-group" data-toggle="buttons">
-											<label id="words" class="btn btn-outline-success" onclick="localStore('textmani_gen_what','words')">
+											<label id="words" class="btn btn-outline-success" onclick="localStore('textmani_gen_what','words');updateStatus('GN','Ready!','black')">
 												<input type="radio" name="genwhat" value="words">Words
 											</label>
-											<label id="sentcs" class="btn btn-outline-success" onclick="localStore('textmani_gen_what','sentcs')">
+											<label id="sentcs" class="btn btn-outline-success" onclick="localStore('textmani_gen_what','sentcs');updateStatus('GN','Ready!','black')">
 												<input type="radio" name="genwhat" value="sentcs">Sentences
 											</label>
-											<label id="prgfs" class="btn btn-outline-success" onclick="localStore('textmani_gen_what','prgfs')">
+											<label id="prgfs" class="btn btn-outline-success" onclick="localStore('textmani_gen_what','prgfs');updateStatus('GN','Ready!','black')">
 												<input type="radio" name="genwhat" value="prgfs">Paragraphs
 											</label>
 										</div>
@@ -183,15 +182,15 @@
 								<div class="col-xs-9 text-xs-left">
 									<form id="howManyTimes" name="timesBy" class="">
 										<div class="btn-group" data-toggle="buttons">
-											<label id="t1" class="btn btn-outline-success" onclick="localStore('textmani_gen_times','t1')"><input type="radio" name="gentimes" value="1">1</label>
-											<label id="t3" class="btn btn-outline-success" onclick="localStore('textmani_gen_times','t3')"><input type="radio" name="gentimes" value="3">3</label>
-											<label id="t5" class="btn btn-outline-success" onclick="localStore('textmani_gen_times','t5')"><input type="radio" name="gentimes" value="5">5</label>
-											<label id="t10" class="btn btn-outline-success" onclick="localStore('textmani_gen_times','t10')"><input type="radio" name="gentimes" value="10">10</label>
-											<label id="t20" class="btn btn-outline-success" onclick="localStore('textmani_gen_times','t20')"><input type="radio" name="gentimes" value="20">20</label>
-											<label id="t50" class="btn btn-outline-success" onclick="localStore('textmani_gen_times','t50')"><input type="radio" name="gentimes" value="50">50</label>
-											<label id="t100" class="btn btn-outline-success" onclick="localStore('textmani_gen_times','t100')"><input type="radio" name="gentimes" value="100">100</label>
-											<label id="t250" class="btn btn-outline-success" onclick="localStore('textmani_gen_times','t250')"><input type="radio" name="gentimes" value="250">250</label>
-											<label id="t500" class="btn btn-outline-success" onclick="localStore('textmani_gen_times','t500')"><input type="radio" name="gentimes" value="500">500</label>
+											<label id="t1" class="btn btn-outline-success" onclick="localStore('textmani_gen_times','t1');updateStatus('GN','Ready!','black')"><input type="radio" name="gentimes" value="1">1</label>
+											<label id="t3" class="btn btn-outline-success" onclick="localStore('textmani_gen_times','t3');updateStatus('GN','Ready!','black')"><input type="radio" name="gentimes" value="3">3</label>
+											<label id="t5" class="btn btn-outline-success" onclick="localStore('textmani_gen_times','t5');updateStatus('GN','Ready!','black')"><input type="radio" name="gentimes" value="5">5</label>
+											<label id="t10" class="btn btn-outline-success" onclick="localStore('textmani_gen_times','t10');updateStatus('GN','Ready!','black')"><input type="radio" name="gentimes" value="10">10</label>
+											<label id="t20" class="btn btn-outline-success" onclick="localStore('textmani_gen_times','t20');updateStatus('GN','Ready!','black')"><input type="radio" name="gentimes" value="20">20</label>
+											<label id="t50" class="btn btn-outline-success" onclick="localStore('textmani_gen_times','t50');updateStatus('GN','Ready!','black')"><input type="radio" name="gentimes" value="50">50</label>
+											<label id="t100" class="btn btn-outline-success" onclick="localStore('textmani_gen_times','t100');updateStatus('GN','Ready!','black')"><input type="radio" name="gentimes" value="100">100</label>
+											<label id="t250" class="btn btn-outline-success" onclick="localStore('textmani_gen_times','t250');updateStatus('GN','Ready!','black')"><input type="radio" name="gentimes" value="250">250</label>
+											<label id="t500" class="btn btn-outline-success" onclick="localStore('textmani_gen_times','t500');updateStatus('GN','Ready!','black')"><input type="radio" name="gentimes" value="500">500</label>
 										</div>
 									</form>
 								</div>
@@ -258,33 +257,33 @@
 		<footer id="footer" class="text-xs-center">
 			<p>
 				<a href="https://github.com/iHani/textmani"><img src="img/github.png" alt="github link"> Source</a>
-				 &copy; Textmani 2016</p>
-		</footer>
+				&copy; Textmani 2016</p>
+			</footer>
 
-	</div> <!-- /container -->
+		</div> <!-- /container -->
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js" integrity="sha384-THPy051/pYDQGanwU6poAc/hOdQxjnOEXzbT+OuUAFqNqFjL+4IGLBgCJC3ZOShY" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js" integrity="sha384-Plbmg8JY28KFelvJVai01l8WyZzrYWG825m+cZ0eDDS1f7d/js6ikvy1+X+guPIB" crossorigin="anonymous"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/js/bootstrap.min.js" integrity="sha384-ux8v3A6CPtOTqOzMKiuo3d/DomGaaClxFYdCu2HPMBEkf6x2xiDyJ7gkXU0MWwaD" crossorigin="anonymous"></script>
-	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-	<script src="js/ie10-viewport-bug-workaround.js"></script>
-	<script src="js/script.js"></script>
-	<!-- Start of StatCounter Code for Default Guide -->
-	<script type="text/javascript">
-	var sc_project=11078624;
-	var sc_invisible=1;
-	var sc_security="63dab027";
-	var scJsHost = (("https:" == document.location.protocol) ?
-	"https://secure." : "http://www.");
-	document.write("<sc"+"ript type='text/javascript' src='" +
-	scJsHost+
-	"statcounter.com/counter/counter.js'></"+"script>");
-	</script>
-	<noscript><div class="statcounter"><a title="web statistics"
-		href="http://statcounter.com/free-web-stats/"
-		target="_blank"><img class="statcounter"
-		src="//c.statcounter.com/11078624/0/63dab027/1/" alt="web
-		statistics"></a></div></noscript>
-		<!-- End of StatCounter Code for Default Guide -->
-	</body>
-	</html>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js" integrity="sha384-THPy051/pYDQGanwU6poAc/hOdQxjnOEXzbT+OuUAFqNqFjL+4IGLBgCJC3ZOShY" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js" integrity="sha384-Plbmg8JY28KFelvJVai01l8WyZzrYWG825m+cZ0eDDS1f7d/js6ikvy1+X+guPIB" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/js/bootstrap.min.js" integrity="sha384-ux8v3A6CPtOTqOzMKiuo3d/DomGaaClxFYdCu2HPMBEkf6x2xiDyJ7gkXU0MWwaD" crossorigin="anonymous"></script>
+		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+		<script src="js/ie10-viewport-bug-workaround.js"></script>
+		<script src="js/script.js"></script>
+		<!-- Start of StatCounter Code for Default Guide -->
+		<script type="text/javascript">
+		var sc_project=11078624;
+		var sc_invisible=1;
+		var sc_security="63dab027";
+		var scJsHost = (("https:" == document.location.protocol) ?
+		"https://secure." : "http://www.");
+		document.write("<sc"+"ript type='text/javascript' src='" +
+		scJsHost+
+		"statcounter.com/counter/counter.js'></"+"script>");
+		</script>
+		<noscript><div class="statcounter"><a title="web statistics"
+			href="http://statcounter.com/free-web-stats/"
+			target="_blank"><img class="statcounter"
+			src="//c.statcounter.com/11078624/0/63dab027/1/" alt="web
+			statistics"></a></div></noscript>
+			<!-- End of StatCounter Code for Default Guide -->
+		</body>
+		</html>
