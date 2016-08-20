@@ -12,11 +12,11 @@ Count words, fix capitalization, replace words, scramble text, generate dummy te
 
 - Scrambling text:
 
-- - Letters: Will shuffle the order of every letter in each word
+  - Letters: Will shuffle the order of every letter in each word
 
-- - Words: Will shuffle the order of every word in the text
+  - Words: Will shuffle the order of every word in the text
 
-- - Sentences: Will separate the text by any comma or dot, then shuffle the order
+  - Sentences: Will separate the text by any comma or dot, then shuffle the order
 
 # Generator
 Fast Lorem Ipsum text generator. Lorem Ipsum text is just a dummy text, also called placeholder (or filler) text. It's a convenient tool for mock-ups. It helps to outline the visual elements of a document or presentation, eg typography, font, or layout.
