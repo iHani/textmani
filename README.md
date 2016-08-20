@@ -11,6 +11,7 @@ Count words, fix capitalization, replace words, scramble text, generate dummy te
 - Remove Something: Removes a string from the entire text, as many times as it occurs.
 
 - Scrambling text:
+
 --Letters: Will shuffle the order of every letter in each word
 
 --Words: Will shuffle the order of every word in the text
