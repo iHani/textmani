@@ -1,4 +1,4 @@
-# textmani
+# Textmani
 Count words, fix capitalization, replace words, scramble text, generate dummy text and more
 
 # Manipulator
