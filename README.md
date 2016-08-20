@@ -1,5 +1,5 @@
 # Textmani
-Count words, fix capitalization, replace words, scramble text, generate dummy text and more
+Count words, fix capitalization, replace words, scramble text, generate dummy text and more. Live example http://textmani.com
 
 # Manipulator
 - Convert Case: Easily change capitalization case to lowercase, uppercase, or capitalize case.
@@ -11,7 +11,6 @@ Count words, fix capitalization, replace words, scramble text, generate dummy te
 - Remove Something: Removes a string from the entire text, as many times as it occurs.
 
 - Scrambling text:
-- 
 --Letters: Will shuffle the order of every letter in each word
 
 --Words: Will shuffle the order of every word in the text
