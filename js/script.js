@@ -236,6 +236,7 @@ function generateLipsum() {
   howmany = document.querySelector('input[name="gentimes"]:checked').value
 
   if (what && howmany) {
+
     let grandList = "lorem ipsum dolor amet consectetur adipiscing a elit sed do eiusmod tempor incid iduntlabo no redo lore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisiali quip excommodo consequat duis aute in irur erepreh enderit voluptate velit esse cillume eu fugiat nulla pariatur excepteur sint el occaecat cupidatat non proident suntcul paofficia deserunt mollit if animest laborum sedpe rspiciatis unde omnis istenatus a voluptatem accusanti umemque no laudantium totam rem aperiam or eaque ipsa no quae ab el illo inventore el veritat isquasi architecto beatae vitae dicta sunt explicabo nemo enim ipsam voluptatem quia volup tasasp el ernatur aut odit aut fugit sed quia consequ untur magnies eosratione voluptatem sequi nesciunt ut neque et porro el sit quisquam estdolo rem is ipsum quiaamet consectetur adipisci velit sed quia non numquam eius modi tempora incid untlabore dolore magnam aliquam quaerat voluptatem ut enim ad minima veniam quis nostrum exercita tionem a ullam corporis suscipit laboriosam nisial iquid no excommodi el consequatur quis autem vel a eum iure repre a hender itinid voluptate velit el esse quam nihil molestiae consequatur vel illumdo lorem eum fugiat quo voluptas nulla pariatur at vero eosac cusamusiusto qui odio el dignissimos ducimu blanditiis praesen tium voluptatum no deleniti atque corrupti quosesquas moles tias excepturi sint occaecati cupiditate non provident ae similique suntculpaof ficia a deserunt mollitia animiest laboru mdolorum fuga et harum quidem a rerum facilis estexpedita distinctio el nam libero tempore cum soluta nobis est eligen di optio cumque nihil impedit quo minusquod maxime placeat facere possimus omnis voluptas assumenda est omnis repellendus temporibus autem quibu sdamaut officiis debitis no aut rerum necessitatibus saepe evenietet el voluptates repudiandae sint el molestiae a no recusandae itaque earum rerum hic no tenetur a sapiente delec tusaut reiciendis volupt atibus maiores alias consequatur aut perferendi sibus asperiores repellat".split(' ')
 
     let caps = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
@@ -340,5 +341,7 @@ function localStorageStuff() {
     }
   } else {
     // Sorry! No Web Storage support..
+    classStripper(['manipulator','generator'],'active','manipulator')
+    classStripper(['manipulator-content','generator-content'],'active','manipulator-content')
   }
 }

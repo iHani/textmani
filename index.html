@@ -30,7 +30,7 @@
 			<!-- Nav tabs -->
 			<ul class="nav nav-tabs" role="tablist">
 				<li class="nav-item">
-					<a id="manipulator" class="nav-link" data-toggle="tab" href="#manipulator-content" role="tab" onclick="localStore('textmani_active_tab','manipulator')"><h5>Manipulator</h5></a>
+					<a id="manipulator" class="nav-link active" data-toggle="tab" href="#manipulator-content" role="tab" onclick="localStore('textmani_active_tab','manipulator')"><h5>Manipulator</h5></a>
 				</li>
 				<li class="nav-item">
 					<a id="generator" class="nav-link" data-toggle="tab" href="#generator-content" role="tab" onclick="localStore('textmani_active_tab','generator')"><h5>Generator</h5></a>
@@ -40,7 +40,7 @@
 			<!-- Tab panes -->
 			<div class="tab-content">
 				<!-- Manipulator tab -->
-				<div id="manipulator-content" class="tab-pane" role="tabpanel">
+				<div id="manipulator-content" class="tab-pane active" role="tabpanel">
 					<form>
 						<div class="form-group">
 							<br>
@@ -215,8 +215,11 @@
 
 	<div class="container">
 		<div class="row">
+			<h3>About</h3>
+			<p>Textmani is a fast and free online tool for manipulating texts, and generating lorem ipsum text.</p>
+				<hr>
 			<div class="col-md-4">
-				<h2>Manipulator</h2>
+				<h4>Manipulator</h2>
 				<ul>
 					<li>Convert Case: Easily <strong>change capitalization case</strong> to lowercase, uppercase, or capitalize case.</li>
 					<li>Count Matches for: Will return the <strong>number of characters and words</strong> that matches the provided text, in the status box.</li>
@@ -232,12 +235,11 @@
 				</ul>
 			</div>
 			<div class="col-md-4">
-				<h2>Generator</h2>
+				<h4>Generator</h4>
 				<p>Fast <strong>Lorem Ipsum text generator</strong>. Lorem Ipsum text is just a dummy text, also called placeholder (or filler) text. It's a convenient tool for mock-ups. It helps to outline the visual elements of a document or presentation, eg typography, font, or layout.</p>
 				<p>The Lorem Ipsum text generated in this website is a greatley distorted version of the Latin text by the classical author and philosopher Cicero.</p>
 			</div>
 			<div class="col-md-4">
-				<h2>Ads</h2>
 				<div>
 					<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 					<ins class="adsbygoogle"
