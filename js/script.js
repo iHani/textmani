@@ -25,7 +25,7 @@ function counters(el){
     ctrswc = gnwc
   }
 
-  input = {
+  let input = {
     chars: function(){
       return txar.length
     },
@@ -117,7 +117,7 @@ function countMatchings(){
     let ma = e('match').value
     if(ma){
       let f = ii.value.split(ma).length - 1
-      updateStatus('TM','Found <b>' + f + '</b> matching(s)', 'orange')
+      updateStatus('TM','Found <b>' + f + '</b> matches', 'orange')
     } else { updateStatus('TM','What would you like to count?','#ff4d4d') }
   } else { updateStatus('TM','No text to count','#ff4d4d') }
 }
@@ -181,14 +181,14 @@ function scramble(type) {
       d = doReplace('.', '. ', shuffle(c.split('.')).join('.'))
       ii.value = doReplace('  ', ' ', d)
       updateStatus('TM','Sentence scrambled done', 'orange')
-      break;
+      break
 
       case 'words':
       n = input.split(' ')
       w = shuffle(n).join(' ')
       ii.value = w
       updateStatus('TM','Words scrambled done', 'orange')
-      break;
+      break
 
       case 'letters':
       n = input.split(' ')
@@ -197,7 +197,7 @@ function scramble(type) {
       }
       ii.value = n.join(' ')
       updateStatus('TM','Letters scrambled done', 'orange')
-      break;
+      break
 
       default:
     }
