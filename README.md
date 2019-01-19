@@ -1,5 +1,5 @@
 # Textmani
-Count words, fix capitalization, replace words, scramble text, generate dummy text and more. Live example http://textmani.com
+Count words, fix capitalization, replace words, scramble text, generate dummy text and more. Live example https://ihani.github.io/textmani
 
 # Manipulator
 - Convert Case: Easily change capitalization case to lowercase, uppercase, or capitalize case.
