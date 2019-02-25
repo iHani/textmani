@@ -1,3 +1,5 @@
+> ## Checkout the new version of Textmani, cleaner implementation with Reactjs, and new features added (Language detector, Text diffing tool) https://github.com/iHani/textmani-react  
+
 # Textmani
 Count words, fix capitalization, replace words, scramble text, generate dummy text and more. Live example https://ihani.github.io/textmani
 
